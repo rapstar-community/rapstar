@@ -30,12 +30,6 @@ const toursData = [
     artists: ["Maeve"]
   },
   {
-    title: "Night Fever Tour",
-    year: "Season 19",
-    image: "https://i.imgur.com/gWYFxrf.jpeg",
-    artists: ["Liberty"]
-  },
-  {
     title: "Pepper Taste: Unpredictable Tour",
     year: "Mini-Tour S13",
     image: "https://i.imgur.com/TLPwcsJ.pngb",
