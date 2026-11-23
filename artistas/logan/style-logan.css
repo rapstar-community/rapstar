@@ -1,0 +1,16 @@
+﻿:root {
+  --color1at: #dad729;
+  --color2at: #fab515;
+  --color3at: #42a1c9;
+  --color4at: #42a1c9;
+  --image-url-header: url("https://i.imgur.com/A49hcE9.jpeg");
+  --image-url-artist: url("../../img/artistas/logan.jpg");
+}
+
+.artist-header{
+  background-position: 60% -10%;
+}
+
+
+
+

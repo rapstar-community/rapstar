@@ -1,0 +1,141 @@
+[
+  {
+    "cover": "https://i.imgur.com/31QjRmg.jpeg",
+    "title": "Brand New Me",
+    "artist": "Lucille",
+    "genre": "Pop",
+    "label": "Muñoz Records®",
+    "link": "https://discord.com/channels/1279249850185154704/1279482029821530222/1563683908237791349",
+    "rating": "tbd",
+    "reviews": 0,
+    "reviewScores": [
+      {}
+    ],
+    "generallyFavorableReviews": false  },
+  {
+    "cover": "https://i.imgur.com/UpUESsA.jpeg",
+    "title": "Chain Reaction",
+    "artist": "Maeve",
+    "genre": "Pop",
+    "label": "Rocktopia®",
+    "link": "https://discord.com/channels/1200848484518080512/1200979863188799589/1340136890870923339",
+    "rating": "tbd",
+    "reviews": 1,
+    "reviewScores": [
+      {"source": "Rolling Stone", "score": 90}
+    ],
+    "generallyFavorableReviews": false  },
+  {
+    "cover": "https://i.imgur.com/QBTb79L.png",
+    "title": "Postcards from a Motel Room",
+    "artist": "Hazel Hansen",
+    "genre": "Pop",
+    "label": "Rocktopia®",
+    "link": "https://discord.com/channels/1279249850185154704/1279482029821530222/1563683908237791349",
+    "rating": "99",
+    "reviews": 2,
+    "reviewScores": [
+      {"source": "Rolling Stone", "score": 100},
+      {"source": "Billboard", "score": 97}
+    ],
+      "universalAcclaim": true  },
+  {
+    "cover": "https://i.imgur.com/tvOI6s2.jpeg",
+    "title": "Voz do Brasil",
+    "artist": "Nielly",
+    "genre": "Rap",
+    "label": "Muñoz Records®",
+    "link": "https://discord.com/channels/1279249850185154704/1279482834540826696/1560136549625241721",
+    "rating": "81",
+    "reviews": 2,
+    "reviewScores": [
+      {"source": "Pitchfork", "score": 82},
+      {"source": "Rolling Stone", "score": 80}
+    ],
+    "universalAcclaim": true  },
+  {
+    "cover": "https://i.imgur.com/MIhfVRk.jpeg",
+    "title": "LATINAJE",
+    "artist": "Emília Ramirez",
+    "genre": "Latin",
+    "label": "Muñoz Records®",
+    "link": "https://discord.com/channels/1279249850185154704/1279484081792487541/1560480051735167092",
+    "rating": "tbd",
+    "reviews": 1,
+    "reviewScores": [
+      {"source": "Rolling Stone", "score": 90}
+    ],
+    "generallyFavorableReviews": false
+  },
+  {
+    "cover": "https://i.imgur.com/nTdddCx.jpeg",
+    "title": "Eletrogasm",
+    "artist": "Aiddan King",
+    "genre": "Pop/Rock",
+    "label": "Muñoz Records",
+    "link": "https://discord.com/channels/1279249850185154704/1279482057105342567/1557209440548298783",
+    "rating": "tbd",
+    "reviews": 0,
+    "reviewScores": [],
+    "generallyFavorableReviews": false
+  },
+  {
+    "cover": "https://i.imgur.com/WsAnx2G.jpeg",
+    "title": "blue-oranged feelings",
+    "artist": "Logan",
+    "genre": "Pop",
+    "label": "Rocktopia®",
+    "link": "https://discord.com/channels/1279249850185154704/1279496064910626877/1322358002916790283",
+    "rating": "100",
+    "reviews": 2,
+    "reviewScores": [
+      {"source": "Pitchfork", "score": 100},
+      {"source": "BBC", "score": 100}
+    ],
+    "universalAcclaim": true  },
+  {
+    "cover": "https://i.imgur.com/Xg0HwaM.jpeg",
+    "title": "Late Nights in Tokyo Time",
+    "artist": "Carllie",
+    "genre": "Pop",
+    "label": "Muñoz Records®",
+    "link": "https://discord.com/channels/1279249850185154704/1280190936210608249/1317646636909858887",
+    "rating": "98",
+    "reviews": 2,
+    "reviewScores": [
+      {"source": "Rolling Stone", "score": 100},
+      {"source": "Pitchfork", "score": 96}
+    ],
+    "universalAcclaim": true
+  },
+  {
+    "cover": "https://i.imgur.com/iZwJR0D.jpeg",
+    "title": "Solitude Dynamics",
+    "artist": "Maeve",
+    "genre": "Pop",
+    "label": "Empire Music Group",
+    "link": "https://discord.com/channels/1279249850185154704/1280190901037039748/1288690132760657921",
+    "rating": "95",
+    "reviews": 4,
+    "reviewScores": [
+      {"source": "NME", "score": 100},
+      {"source": "RollingStone", "score": 100},
+      {"source": "Pitchfork", "score": 90},
+      {"source": "Paperview", "score": 89}
+    ],
+    "universalAcclaim": true  },
+  {
+    "cover": "https://i.imgur.com/3CfeBjG.jpeg",
+    "title": "Old Vintage Ways",
+    "artist": "Daniel",
+    "genre": "Pop",
+    "label": "Rocktopia®",
+    "link": "https://discord.com/channels/1279249850185154704/1285423684009594903/1290515683653976075",
+    "rating": "tbd",
+    "reviews": 1,
+    "reviewScores": [
+      {"source": "RollingStone", "score": 100}
+    ],
+    "universalAcclaim": true  }
+]
+

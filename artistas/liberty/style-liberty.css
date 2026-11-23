@@ -1,0 +1,12 @@
+﻿:root {
+  --color1at: #c7cf6f;
+  --color2at: #cf71c5;
+  --color3at: #c7cf6f;
+  --color4at: #c7cf6f;
+  --image-url-header: url("https://i.imgur.com/MnRaa52.png");
+  --image-url-artist: url("../../img/artistas/liberty.jpg");
+}
+.artist-header {
+  background-position: top left;
+}
+

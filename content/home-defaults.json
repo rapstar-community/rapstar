@@ -1,0 +1,122 @@
+{
+  "releasesTitle": "Últimos lançamentos",
+  "highlightsTitle": "Destaques",
+  "labelsTitle": "Gravadoras Oficiais",
+  "footer": "© 2026 Rapstar Community: Forever - Beta",
+  "releases": [
+    {
+      "title": "Brand New Me",
+      "artist": "Lucille",
+      "cover": "https://i.imgur.com/31QjRmg.jpeg",
+      "link": "https://discord.com/channels/1200848484518080512/1200979863188799589/1340136890870923339"
+    },
+    {
+      "title": "Postcards from a Motel Room",
+      "artist": "Hazel Hansen",
+      "cover": "https://i.imgur.com/QBTb79L.png",
+      "link": "https://discord.com/channels/1279249850185154704/1279482029821530222/1563683908237791349"
+    },
+    {
+      "title": "Chain Reaction",
+      "artist": "Maeve",
+      "cover": "https://i.imgur.com/UpUESsA.jpeg",
+      "link": "https://discord.com/channels/1200848484518080512/1200979863188799589/1340136890870923339"
+    },
+    {
+      "title": "Voz do Brasil",
+      "artist": "Nielly",
+      "cover": "https://i.imgur.com/tvOI6s2.jpeg",
+      "link": "https://discord.com/channels/1279249850185154704/1279482834540826696/1560136549625241721"
+    }
+  ],
+  "highlights": [
+    {
+      "title": "that's my baby",
+      "artist": "Nate",
+      "cover": "/assets/covers/thats-my-baby.jpg",
+      "link": "https://discord.com/channels/1200848484518080512/1200979863188799589/1320224976699260948"
+    },
+    {
+      "title": "Girl Crush",
+      "artist": "Liberty",
+      "cover": "https://i.imgur.com/CPDz2Yg.jpeg",
+      "link": "https://discord.com/channels/1200848484518080512/1200979863188799589/1315880115535745056"
+    },
+    {
+      "title": "Maeve Meets World",
+      "artist": "Riley",
+      "cover": "/assets/covers/maeve-meets-world.jpg",
+      "link": "https://discord.com/channels/1200848484518080512/1200979863188799589/1310405514718351381"
+    },
+    {
+      "title": "Beautiful Theory",
+      "artist": "Millie",
+      "cover": "https://i.imgur.com/jENAZax.png",
+      "link": "https://discord.com/channels/1200848484518080512/1200979863188799589/1307779024621142208"
+    },
+    {
+      "title": "Who's That DJ?",
+      "artist": "Eric",
+      "cover": "/assets/covers/whos-that-dj.jpg",
+      "link": "https://discord.com/channels/1200848484518080512/1200979863188799589/1302077197342740483"
+    },
+    {
+      "title": "Angel's Cinema",
+      "artist": "Sierra Albani",
+      "cover": "https://i.imgur.com/52QjiyW.png",
+      "link": "https://discord.com/channels/1200848484518080512/1200979863188799589/1302074976488132729"
+    }
+  ],
+  "labels": [
+    {
+      "title": "Rocktopia",
+      "cover": "https://i.imgur.com/RZb1PMf.png",
+      "link": "https://discord.com/channels/1279249850185154704/1279249850197872660"
+    },
+    {
+      "title": "Empire Music Group",
+      "cover": "https://i.imgur.com/TLfgmFZ.png",
+      "link": "https://discord.com/channels/1279249850185154704/1279249850197872661"
+    },
+    {
+      "title": "Muñoz Records",
+      "cover": "https://i.imgur.com/xzwN1Af.png",
+      "link": "https://discord.com/channels/1279249850185154704/1280240501588496444"
+    },
+    {
+      "title": "Sterling Records",
+      "cover": "https://i.imgur.com/YpzgZNf.png",
+      "link": "https://discord.com/channels/1279249850185154704/1281059716575002625"
+    },
+    {
+      "title": "Joint Nation",
+      "cover": "https://i.imgur.com/72hOX7J.png",
+      "link": "https://discord.com/channels/1279249850185154704/1279878065152856357"
+    }
+  ],
+  "news": [
+    {
+      "title": "'Girl Crush' Estreia no Topo da Billboard Hot 100 com Pontos Monstruosos",
+      "cover": "https://i.imgur.com/BWnwpaS.jpeg",
+      "link": "https://discord.com/channels/1279249850185154704/1280190901037039748"
+    },
+    {
+      "title": "Aiddan King Regressa aos Palcos com Eletroseven Club Tour",
+      "cover": "https://i.imgur.com/wwLUhUa.jpeg"
+    },
+    {
+      "title": "Lucille Lança o Álbum 'Brand New Me'",
+      "cover": "https://i.imgur.com/31QjRmg.jpeg"
+    },
+    {
+      "title": "Os Mais Aguardados do Momento",
+      "cover": "https://i.imgur.com/YhW7kqC.png",
+      "link": "https://discord.com/channels/1279249850185154704/1280190901037039748"
+    },
+    {
+      "title": "It's a Rapstar Summer!",
+      "cover": "https://i.imgur.com/QIbB2Dm.png",
+      "link": "https://discord.com/channels/1279249850185154704/1284151120758833162/1558921352893693994"
+    }
+  ]
+}

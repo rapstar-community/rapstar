@@ -1,0 +1,12 @@
+﻿:root {
+  --color1at: #938529;
+  --color2at: #921a1a;
+  --color3at: #938529;
+  --color4at: #938529;
+  --image-url-header: url("https://i.imgur.com/9dzymha.jpeg");
+  --image-url-artist: url("../../img/artistas/nielly.jpg");
+}
+.artist-header {
+  background-position: top left;
+}
+

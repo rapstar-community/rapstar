@@ -1,0 +1,12 @@
+﻿:root {
+  --color1at: #1F4E79;
+  --color2at: #2E75B6;
+  --color3at: #5B9BD5;
+  --color4at: #9DC3E6;
+  --image-url-header: url("https://i.imgur.com/oQ5rkKT.jpeg");
+  --image-url-artist: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkKNNSodI41tTT56iwP3Geuz-aV8DemYzBPE_NSS10UfTkXBIa4PN8e_0&s=10");
+}
+.artist-header {
+  background-position: top left;
+}
+

@@ -1,0 +1,13 @@
+﻿:root {
+  --color1at: #2d474d;
+  --color2at: #364855;
+  --color3at: #82b1bc;
+  --color4at: #82b1bc;
+  --image-url-header: url("https://storage-europe.mediaslide.com/premierhairandmakeup/pictures/107/5517/large-1713351472-a9dd09129e7777c02aefaf0b162347d8.jpg");
+  --image-url-artist: url("../../img/artistas/aiddanking.png");
+}
+
+.artist-header{
+  background-position: 10% 20%;
+}
+

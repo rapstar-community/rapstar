@@ -1,0 +1,13 @@
+﻿:root {
+  --color1at: #8983f3;
+  --color2at: #8983f3;
+  --color3at: #83cee0;
+  --color4at: #83cee0;
+  --image-url-header: url("https://i.imgur.com/tzdo6NG.png");
+  --image-url-artist: url("../../img/artistas/ivysinclair.jpg");
+}
+
+.artist-header{
+  background-position: top left;
+}
+

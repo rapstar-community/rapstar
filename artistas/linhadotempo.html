@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rapstar Community: Forever</title>
+  <link rel="icon" type="image/png" href="https://i.imgur.com/X6uKwas.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <style>
+    @font-face {
+      font-family: Spotify;
+      src: url('../fontes/GothamBold.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Commons Regular';
+      src: url('../fontes/TT Commons Regular.otf') format('opentype');
+    }
+
+    @font-face {
+      font-family: 'Commons Bold';
+      src: url('../fontes/TT Commons Bold.otf') format('opentype');
+    }
+
+    @font-face {
+      font-family: 'Commons DemiBold';
+      src: url('../fontes/TT Commons DemiBold.otf') format('opentype');
+    }
+
+    header {
+      padding: 20px;
+      text-align: center;
+      background-color: #333;
+      border-top: 5px solid;
+      border-image: linear-gradient(to right, #FFC0CB, #7ea);
+      border-image-slice: 1;
+      color: #fff;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 999;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5), -2px -2px 10px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .menu-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    .menu-buttons :is(button, a.home-btn) {
+      text-transform: uppercase;
+      font-family: 'Commons Regular', sans-serif;
+      font-size: 14px;
+      letter-spacing: 2px;
+      background-color: #c28310;
+      border: none;
+      color: #1c1b19;
+      cursor: pointer;
+      padding: 10px 20px;
+      border-radius: 20px;
+      margin: 5px;
+    }
+
+    .menu-buttons :is(button, a.home-btn):hover {
+      background-color: #d59420;
+      cursor: pointer;
+      transition: all 1s;
+    }
+
+    footer {
+      background-color: #333;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5), -2px -2px 10px rgba(0, 0, 0, 0.5);
+      color: #fff;
+      font-family: 'Commons Regular', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center;
+      padding: 20px;
+      margin-top: 70px;
+      clear: both;
+    }
+
+    footer:hover {
+      color: #d59420;
+      cursor: pointer;
+      transition: all 1s;
+    }
+
+    body {
+      font-family: 'Commons Regular', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      background-color: #191414;
+      background-image: url('https://i.imgur.com/1bd1yQD.png');
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      overflow-x: hidden;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    h1 {
+      margin-top: 15px;
+      font-family: 'Commons DemiBold', sans-serif;
+      letter-spacing: 1px;
+      font-size: 20px;
+    }
+
+    h2 {
+      margin-top: -10px;
+      color: #999999;
+      font-size: 16px;
+      font-family: 'Commons Regular', sans-serif;
+      letter-spacing: 1px;
+    }
+
+    h1:hover, h2:hover {
+      color: #FFC0CB;
+      cursor: pointer;
+      transition: all 1s;
+    }
+
+    .header h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .feature-content h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .feature-content p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .number-one img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+
+    .number-one-content h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .number-one-content p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      transition-duration: 1s;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      min-width: 200px;
+      z-index: 1;
+      margin-left: 10px;
+      transition-duration: 1s;
+    }
+
+    .dropdown-content a {
+      color: #1c1b19;
+      font-family: 'Commons Regular', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 12px;
+      margin-top: 5px;
+      padding: 8px 8px;
+      text-decoration: none;
+      display: block;
+      border-radius: 15px;
+      background-color: #c28310;
+      transition-duration: 1s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #d59420;
+      transition-duration: 1s;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+      transition-duration: 1s;
+    }
+
+    .dropbtn {
+      text-transform: uppercase;
+      font-family: 'Commons Regular', sans-serif;
+      font-size: 14px;
+      letter-spacing: 1px;
+      color: #1c1b19;
+      background-color: #c28310;
+      border: none;
+      cursor: pointer;
+      padding: 10px 20px;
+      border-radius: 20px;
+      margin: 5px;
+      transition-duration: 1s;
+    }
+
+    .dropbtn:hover {
+      background-color: #d59420;
+      transition-duration: 1s;
+    }
+
+    .menu-link {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .info-box {
+      position: absolute;
+      z-index: 5;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #333333;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      transition: 1s;
+      text-align: center;
+    }
+
+    .info-content {
+      font-family: 'Commons Regular', sans-serif;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: 1s;
+    }
+
+    .info-content:hover {
+      color: #FFC0CB;
+      transition: 1s;
+    }
+
+    .artist-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Cria duas colunas para as seções */
+      gap: 20px; /* Espaço entre as colunas */
+      margin-top: 21%;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+
+    .artist img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    /* Responsividade */
+    @media (max-width: 1200px) {
+      .artist-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      }
+
+      .menu-buttons :is(button, a.home-btn) {
+        padding: 10px;
+        font-size: 12px;
+      }
+
+      .dropbtn {
+        padding: 10px;
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .info-box {
+        width: 70%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -30%);
+      }
+
+      .artist-grid {
+        margin-top: 90%;
+      }
+
+      header {
+        padding: 10px;
+      }
+
+      .menu-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .menu-buttons :is(button, a.home-btn), .dropbtn {
+        margin: 5px 0;
+      }
+
+      .artist {
+        width: 150px;
+        height: 150px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .info-box {
+        top: 55%;
+      }
+
+      .artist-grid {
+        margin-top: 95%;
+      }
+
+      .artist {
+        width: 120px;
+        height: 120px;
+      }
+
+      .artist-name {
+        bottom: 70px;
+        font-size: 8px;
+      }
+
+      .menu-buttons :is(button, a.home-btn), .dropbtn {
+        padding: 5px 10px;
+        font-size: 10px;
+      }
+    }
+
+    .label-section {
+      background-color: #212121;
+      padding: 40px;
+      border-radius: 15px;
+      margin-top: 30px;
+      width: 80%;
+    }
+
+    .label-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .label-item {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #333;
+      border-radius: 20px;
+      margin-top: 10px;
+      transition: 1s;
+    }
+
+    .label-item:hover{
+      background-color: #FFC0CB;
+      transition: 1s;
+    }
+
+    .label-item img {
+      width: 100px;
+      height: 100px;
+      border-radius: 14px;
+      transition: transform 0.3s ease;
+      object-fit: cover;
+
+    }
+
+    .label-item:hover {
+      transform: scale(1.3);
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    .label-item::after {
+      text-transform: uppercase;
+      content: attr(data-label-name);
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 5px 10px;
+      font-size: 12px;
+      border-radius: 5px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .label-item:hover::after {
+      opacity: 1;
+      cursor: pointer;
+    }
+
+    .label-scroll {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+    }
+
+    .label-scroll::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .label-scroll::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 10px;
+    }
+
+    .label-scroll::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
+  </style>
+</head>
+<body>
+<header id="header">
+  <div class="header-content">
+    <div class="menu-buttons">
+      <div class="dropdown">
+        <a href="/" class="home-btn menu-link" aria-label="Página inicial"><i class="fas fa-home" aria-hidden="true"></i></a>
+        <button class="dropbtn">Charts <i class="fas fa-caret-down"></i></button>
+        <div class="dropdown-content">
+          <a href="../charts/billboard/hot100.html">Billboard Hot 100</a>
+          <a href="../charts/billboard/billboard200.html">Billboard 200</a>
+          
+          <a href="../charts/spotify/spotify-singles.html">Spotify Global Singles</a>
+          
+          <a href="../charts/spotify/spotify-monthly-listeners.html">Spotify Monthly Listeners</a>
+        </div>
+      </div>
+      <button><a href="../metacritic/metacritic.html" class="menu-link">Metacritic</a></button>
+      <button><a href="https://discord.gg/PxNUBCHF4Q" class="menu-link">Discord</a></button>
+      <button><a href="../artistas/linhadotempo.html" class="menu-link">Artistas</a></button>
+    </div>
+  </div>
+</header>
+
+<div class="info-box">
+  <div class="info-content">
+    <h1>ARTISTAS</h1>
+    <p>Perfis dos artistas ativos da Rapstar Community.</p>
+  </div>
+</div>
+
+
+<div class="artist-grid">
+  <!-- Rocktopia -->
+  <div class="label-section">
+    <div class="header d-flex justify-content-between align-items-center">
+      <h2>Rocktopia</h2>
+    </div>
+    <div class="label-list">
+      <a href="../artistas/daniel/historia.html">
+        <div class="label-item" data-label-name="Daniel">
+          <img src="https://i.imgur.com/5wDO0GO.png" alt="Daniel">
+        </div>
+      </a>
+      <a href="../artistas/hazelhansen/historia.html">
+        <div class="label-item" data-label-name="Hazel Hansen">
+          <img src="https://i.imgur.com/B0QdMhv.png" alt="Hazel Hansen">
+        </div>
+      </a>
+      <a href="../artistas/logan/historia.html">
+        <div class="label-item" data-label-name="Logan">
+          <img src="../img/artistas/logan.jpg" alt="Logan">
+        </div>
+      </a>
+      <a href="../artistas/maeve/historia.html">
+        <div class="label-item" data-label-name="Maeve">
+          <img src="https://i.imgur.com/62DBFYd.png" alt="Maeve">
+        </div>
+      </a>
+      <a href="../artistas/millie/historia.html">
+        <div class="label-item" data-label-name="Millie">
+          <img src="https://i.imgur.com/rve7p69.png" alt="Millie">
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Muñoz Records -->
+  <div class="label-section">
+    <div class="header d-flex justify-content-between align-items-center">
+      <h2>Muñoz Records</h2>
+    </div>
+    <div class="label-list">
+      <a href="../artistas/aiddanking/historia.html">
+        <div class="label-item" data-label-name="Aiddan King">
+          <img src="../img/artistas/aiddanking.png" alt="Aiddan King">
+        </div>
+      </a>
+      <a href="../artistas/angel/historia.html">
+        <div class="label-item" data-label-name="Angel">
+          <img src="https://i.imgur.com/deTZ1VD.png" alt="Angel">
+        </div>
+      </a>
+      <a href="../artistas/carllie/historia.html">
+        <div class="label-item" data-label-name="Carllie">
+          <img src="../img/artistas/carllie.png" alt="Carllie">
+        </div>
+      </a>
+      <a href="../artistas/emiliaramirez/historia.html">
+        <div class="label-item" data-label-name="Emília Ramirez">
+          <img src="https://i.imgur.com/VUl9EtK.png" alt="Emília Ramirez">
+        </div>
+      </a>
+      <a href="../artistas/lucille/historia.html">
+        <div class="label-item" data-label-name="Lucille">
+          <img src="../img/artistas/lucille.jpg" alt="Lucille">
+        </div>
+      </a>
+      <a href="../artistas/nielly/historia.html">
+        <div class="label-item" data-label-name="Nielly">
+          <img src="../img/artistas/nielly.jpg" alt="Nielly">
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Empire Music Group -->
+  <div class="label-section">
+    <div class="header d-flex justify-content-between align-items-center">
+      <h2>Empire Music Group</h2>
+    </div>
+    <div class="label-list">
+      <a href="../artistas/mark/historia.html">
+        <div class="label-item" data-label-name="Mark">
+          <img src="../img/artistas/mark.jpg" alt="Mark">
+        </div>
+      </a>
+      <a href="../artistas/liberty/historia.html">
+        <div class="label-item" data-label-name="Liberty">
+          <img src="../img/artistas/liberty.jpg" alt="Liberty">
+        </div>
+      </a>
+      <a href="../artistas/luke/historia.html">
+        <div class="label-item" data-label-name="Luke">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkKNNSodI41tTT56iwP3Geuz-aV8DemYzBPE_NSS10UfTkXBIa4PN8e_0&s=10" alt="Luke">
+        </div>
+      </a>
+      <a href="../artistas/sierraalbani/historia.html">
+        <div class="label-item" data-label-name="Sierra Albani">
+          <img src="https://i.imgur.com/9BuuGyY.png" alt="Sierra Albani">
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Sterling Records -->
+  <div class="label-section">
+    <div class="header d-flex justify-content-between align-items-center">
+      <h2>Sterling Records</h2>
+    </div>
+    <div class="label-list">
+      <a href="../artistas/ashleymiller/historia.html">
+        <div class="label-item" data-label-name="Ashley Miller">
+          <img src="https://i.imgur.com/33eh4zl.png" alt="Ashley Miller">
+        </div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+
+<footer>
+  <p>© 2026 Rapstar Community: Forever - Beta</p>
+</footer>
+
+  <script src="/js/star-rain.js" defer></script></body>
+</html>
+

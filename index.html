@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<script>
+  if (/^#(?:invite_token|recovery_token|confirmation_token|access_token|email_change_token)=/.test(location.hash)) {
+    location.replace('/admin/' + location.hash);
+  }
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rapstar Community: Forever</title>
+  <link rel="icon" type="image/png" href="https://i.imgur.com/X6uKwas.png">
+  <meta name="description" content="Explore artistas, últimos lançamentos, destaques e gravadoras da Rapstar Community: Forever.">
+  <meta property="og:site_name" content="Rapstar Community: Forever">
+  <meta property="og:title" content="Rapstar Community: Forever">
+  <meta property="og:description" content="Explore artistas, últimos lançamentos, destaques e gravadoras da Rapstar Community: Forever.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    @font-face {
+      font-family: Spotify;
+      src: url('fontes/GothamBold.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Commons Regular';
+      src: url('fontes/TT Commons Regular.otf') format('opentype');
+    }
+    @font-face {
+      font-family: 'Commons Bold';
+      src: url('fontes/TT Commons Bold.otf') format('opentype');
+    }
+    @font-face {
+      font-family: 'Commons DemiBold';
+      src: url('fontes/TT Commons DemiBold.otf') format('opentype');
+    }
+    @media (max-width: 1200px) {
+      .menu-buttons :is(button, a.home-btn) {
+        padding: 10px;
+        font-size: 12px;
+      }
+
+      .dropbtn {
+        padding: 10px;
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .menu-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .menu-buttons :is(button, a.home-btn), .dropbtn {
+        margin: 5px 0;
+      }
+
+      .container{
+        margin-top: 600px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .menu-buttons :is(button, a.home-btn), .dropbtn {
+        padding: 5px 10px;
+        font-size: 10px;
+      }
+
+      .container{
+        margin-top: 600px;
+      }
+    }
+
+    footer {
+      width: 100%;
+      background-color: #333;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5), -2px -2px 10px rgba(0, 0, 0, 0.5);
+      color: #fff;
+      font-family: 'Commons Regular', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center;
+      padding-top: 20px;
+      margin-top: 70px;
+    }
+
+    footer:hover{
+      color: #d59420;
+      cursor: pointer;
+      -webkit-transition: all 1s;
+      -moz-transition: all 1s;
+      -ms-transition: all 1s;
+      -o-transition: all 1s;
+      transition: all 1s;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      transition-duration: 1s;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      min-width: 200px;
+      z-index: 1;
+      margin-left: 10px;
+      transition-duration: 1s;
+    }
+
+    .dropdown-content a {
+      color: #1c1b19;
+      font-family: 'Commons Regular', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 12px;
+      margin-top: 5px;
+      padding: 6px 8px;
+      text-decoration: none;
+      display: block;
+      border-radius: 10px;
+      background-color: #c28310;
+      transition-duration: 1s;
+    }
+
+    .dropdown-content a:hover {
+      color: #1c1b19;
+      background-color: #d59420;
+      transition-duration: 1s;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+      transition-duration: 1s;
+    }
+
+    .dropbtn {
+      text-transform: uppercase;
+      font-family: 'Commons Regular', sans-serif;
+      font-size: 14px;
+      letter-spacing: 1px;
+      color: #1c1b19;
+      background-color: #c28310;
+      border: none;
+      cursor: pointer;
+      padding: 8px 20px;
+      border-radius: 10px;
+      margin-left: 10px;
+      margin-right: 10px;
+      transition-duration: 1s;
+    }
+
+    .dropbtn:hover {
+      background-color: #d59420;
+      transition-duration: 1s;
+    }
+
+    .menu-buttons {
+      margin-left: -15px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .menu-buttons :is(button, a.home-btn) {
+      text-transform: uppercase;
+      font-family: 'Commons Regular', sans-serif;
+      font-size: 14px;
+      letter-spacing: 2px;
+      background-color: #c28310;
+      border: none;
+      color: #1c1b19;
+      cursor: pointer;
+      padding: 8px 20px;
+      border-radius: 10px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    .menu-buttons :is(button, a.home-btn):hover {
+      background-color: #d59420;
+      cursor: pointer;
+      -webkit-transition: all 1s;
+      -moz-transition: all 1s;
+      -ms-transition: all 1s;
+      -o-transition: all 1s;
+      transition: all 1s;
+    }
+
+    .menu-link, .menu-link:hover, .menu-link:focus-visible {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    h1{
+      font-family: 'Commons Bold', sans-serif;
+      font-size: 20px;
+      line-height: 2px;
+    }
+
+    h1:hover{
+      cursor: pointer;
+      color: #c28310;
+    }
+
+    header {
+      padding: 20px;
+      text-align: center;
+      background-color: #1c1b19;
+      border-top: 5px solid;
+      border-image: linear-gradient(to right, #f1a5c0, #7ea);
+      border-image-slice: 1;
+      color: #fff;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 999;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    footer {
+      background-color: #333;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+      color: #fff;
+      font-family: 'Commons Regular', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center;
+      padding: 20px;
+      margin-top: 70px;
+    }
+
+    a:hover{
+      color: white;
+      text-decoration: none;
+    }
+
+    ::selection {
+      background-color: #c28310;
+      color: #1c1b19;
+    }
+
+    body {
+      font-family: 'Commons Regular', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      background-color: #444444;
+      background-image: url('https://i.imgur.com/1bd1yQD.png');
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      overflow-x: hidden;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .container {
+      position: relative;
+      margin-top: 100px;
+      justify-content: center;
+      padding: 50px;
+      animation: fadeIn 1s forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .music-section {
+      background-color: #212121;
+      padding: 50px;
+      color: white;
+      border-radius: 15px;
+      margin-bottom: -150px;
+      width: 95%;
+    }
+
+    a{
+      color: white;
+
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .header h2 {
+      font-size: 30px;
+      margin: 0;
+      transition: 1s;
+      font-family: 'Commons DemiBold', sans-serif;
+    }
+
+    h2:hover{
+      transition: 1s;
+      cursor: pointer;
+      color: #c28310;
+    }
+
+    .show-all {
+      font-family: 'Commons DemiBold', sans-serif;
+      font-size: 14px;
+      color: #c28310;
+      text-decoration: none;
+      transition: 1s;
+    }
+
+    .show-all:hover, .show-all:focus-visible {
+      text-decoration: underline;
+      color: #c28310;
+      transition: 1s;
+    }
+
+    .music-list {
+      display: flex;
+      gap: 40px;
+    }
+
+    .music-item {
+      width: 195px;
+      padding-left: 15px;
+    }
+
+    .music-item img {
+      width: 100%;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+    }
+
+    .music-item h3 {
+      font-family: 'Commons DemiBold', sans-serif;
+      font-size: 20px;
+      margin: 10px 0 5px;
+      transition: 1s;
+    }
+
+    .music-item p {
+      font-family: 'Commons Regular', sans-serif;
+      font-size: 16px;
+      color: #b3b3b3;
+      margin: 0;
+      transition: 1s;
+    }
+
+    .music-item h3:hover, .music-item p:hover{
+      cursor: pointer;
+      color: #c28310;
+      transition: 1s;
+    }
+
+    .highlight-section {
+      background-color: #212121;
+      padding: 50px;
+      border-radius: 15px;
+      margin-top: 30px;
+    }
+
+    .highlight-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .highlight-item {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      height: 50px;
+      width: 48%;
+      padding-right: 10px;
+      line-height: 17px;
+      display: flex;
+      align-items: center;
+      background-color: #333;
+      border-radius: 4px;
+      color: #fff;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+      overflow: hidden;
+      gap: 10px;
+      box-sizing: border-box;
+    }
+
+    .highlight-item img {
+      width: 50px;
+      height: 50px;
+      border-radius: 4px 0px 0px 4px;
+      margin-right: 10px;
+    }
+
+    .highlight-item span {
+      font-family: 'Commons DemiBold', sans-serif;
+      font-size: 16px;
+      color: #fff;
+      transition: 1s;
+    }
+
+    .highlight-item span:hover{
+      color: #c28310;
+      transition: 1s;
+    }
+
+    .highlight-item:hover {
+      background-color: #3a3a3a;
+    }
+
+    .label-section {
+      background-color: #212121;
+      padding: 40px;
+      border-radius: 15px;
+      margin-top: 30px;
+    }
+
+    .label-item {
+      position: relative;
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #333;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+      margin-right: 30px;
+      margin-bottom: 20px;
+    }
+
+    .label-item img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+    }
+
+    .label-item:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    .label-item::after {
+      content: attr(data-label-name);
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 5px 10px;
+      font-size: 12px;
+      border-radius: 5px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .label-item:hover::after {
+      opacity: 1;
+      cursor: pointer;
+    }
+
+    .highlight-item a {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    .news-container { margin-top: 0; padding-top: 20px; padding-bottom: 0; }
+    .news-section { background: #212121; padding: 40px 50px; border-radius: 15px; width: 95%; margin: 0 auto; }
+    .news-section[hidden] { display: none; }
+    .ad-container {
+      margin-top: 100px;
+      padding: 30px 50px 0;
+    }
+    .ad-carousel {
+      position: relative;
+      width: 95%;
+      aspect-ratio: 1123 / 300;
+      height: auto;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 15px;
+      background: #212121;
+    }
+    .ad-carousel img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+    .ad-carousel img.active {
+      opacity: 1;
+    }
+    .ad-carousel:focus-visible {
+      outline: 3px solid #c28310;
+      outline-offset: 4px;
+    }
+    .ad-container + .container {
+      margin-top: 0;
+      padding-top: 20px;
+    }
+    .news-controls { display: flex; gap: 10px; align-items: center; }
+    .news-controls button { border: 1px solid #777; border-radius: 50%; width: 40px; height: 40px; background: #333; color: #fff; font-size: 22px; cursor: pointer; }
+    .news-controls button:hover { background: #c28310; color: #1c1b19; }
+    .news-controls button:focus-visible, .news-pagination button:focus-visible, .news-card:focus-visible { outline: 3px solid #c28310; outline-offset: 4px; }
+    .news-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; border-radius: 8px; }
+    .news-track::-webkit-scrollbar { display: none; }
+    .news-slide { flex: 0 0 100%; min-width: 0; scroll-snap-align: start; }
+    .news-card { position: relative; display: block; height: 360px; overflow: hidden; color: #fff; }
+    .news-card img { width: 100%; height: 100%; object-fit: cover; }
+    .news-caption { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 32px; background: linear-gradient(transparent, rgba(28,27,25,.95)); }
+    .news-kicker { color: #e8b558; text-transform: uppercase; letter-spacing: 2px; font-size: 12px; margin-bottom: 10px; }
+    .news-caption h3 { font-family: 'Commons DemiBold', sans-serif; font-size: clamp(22px, 3vw, 34px); line-height: 1.15; max-width: 720px; margin: 0; }
+    .news-pagination { display: flex; justify-content: center; gap: 4px; margin-top: 16px; }
+    .news-pagination button { border: 0; background: transparent; padding: 10px; cursor: pointer; }
+    .news-pagination button::after { content: ''; display: block; width: 9px; height: 9px; background: #777; border-radius: 50%; }
+    .news-pagination button[aria-current="true"]::after { background: #c28310; }
+    #newsCounter { font-variant-numeric: tabular-nums; font-size: 14px; color: #b3b3b3; }
+    .music-section { margin-bottom: 0; }
+    .news-container + .container { margin-top: 0; padding-top: 20px; }
+    @media (max-width: 600px) {
+      .ad-container { padding: 20px 15px 0; }
+      .ad-carousel { width: 100%; }
+      .news-container { padding: 20px 15px 0; }
+      .news-section { width: 100%; padding: 24px 18px; }
+      .news-section .header h2 { font-size: 26px; }
+      .news-card { height: 320px; }
+      .news-caption { padding: 22px; }
+      #newsCounter { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header id="header">
+  <div class="header-content">
+    <div class="menu-buttons">
+      <a href="/" class="home-btn menu-link" aria-label="Página inicial"><i class="fas fa-home" aria-hidden="true"></i></a>
+      <div class="dropdown">
+        <button class="dropbtn">Charts <i class="fas fa-caret-down"></i></button>
+        <div class="dropdown-content">
+          <a href="/charts/billboard/hot100.html">Billboard Hot 100</a>
+          <a href="/charts/billboard/billboard200.html">Billboard 200</a>
+          
+          <a href="/charts/spotify/spotify-singles.html">Spotify Global Songs</a>
+          
+          <a href="/charts/spotify/spotify-monthly-listeners.html">Spotify Monthly Listeners</a>
+        </div>
+      </div>
+      <button><a href="/metacritic/metacritic.html" class="menu-link">Metacritic</a></button>
+      <button><a href="https://discord.gg/PxNUBCHF4Q" class="menu-link">Discord</a></button>
+      <button><a href="/artistas/linhadotempo.html" class="menu-link">Artistas</a></button>
+    </div>
+  </div>
+</header>
+
+<div class="container ad-container">
+  <div class="ad-carousel" id="adCarousel" role="region" aria-label="Anúncios" tabindex="0">
+    <img class="active" src="img/anuncio-1.png" alt="Anúncio 1">
+    <img src="img/anuncio-2.png" alt="Anúncio 2">
+    <img src="img/anuncio-3.png" alt="Anúncio 3">
+    <img src="img/anuncio-4.png" alt="Anúncio 4">
+  </div>
+</div>
+
+<div class="container">
+  <div class="music-section col-md-12 d-flex flex-column mx-auto px-6 mt-4">
+    <div class="header d-flex justify-content-between align-items-center">
+      <h2>Últimos lançamentos</h2>
+      <a href="/metacritic/metacritic.html" class="show-all">Mostrar tudo</a>
+    </div>
+    <div class="music-list row" id="musicList">
+    </div>
+  </div>
+</div>
+
+<div class="container news-container">
+  <section class="news-section" id="newsSection" aria-labelledby="newsTitle" aria-roledescription="carrossel" hidden>
+    <div class="header">
+      <h2 id="newsTitle">Notícias</h2>
+      <div class="news-controls">
+        <span id="newsCounter"></span>
+        <button type="button" id="newsPrevious" aria-label="Notícia anterior" aria-controls="newsTrack">&#8249;</button>
+        <button type="button" id="newsNext" aria-label="Notícia seguinte" aria-controls="newsTrack">&#8250;</button>
+      </div>
+    </div>
+    <div class="news-track" id="newsTrack" tabindex="0" aria-label="Notícias da comunidade"></div>
+    <div class="news-pagination" id="newsPagination" aria-label="Escolher notícia"></div>
+  </section>
+</div>
+
+<div class="container">
+  <div class="row gap-2">
+    <div class="highlight-section col-md-6 d-flex flex-column mx-auto px-4 mt-4 mb-4">
+      <div class="header d-flex justify-content-between align-items-center">
+        <h2>Destaques</h2>
+        <a href="/metacritic/metacritic.html" class="show-all">Mostrar tudo</a>
+      </div>
+      <div class="highlight-list d-flex flex-wrap" id="highlightList">
+      </div>
+    </div>
+
+    <!-- Nova seção de Gravadoras Oficiais -->
+    <div class="label-section col-md-4 d-flex flex-column mx-auto px-4 mt-4 mb-4">
+      <div class="header d-flex justify-content-between align-items-center">
+        <h2>Gravadoras Oficiais</h2>
+      </div>
+      <div class="label-list d-flex flex-wrap" id="labelList">
+        <div class="label-item" data-label-name="Rocktopia">
+          <a href="https://discord.com/channels/1279249850185154704/1279249850197872660">
+            <img src="https://i.imgur.com/RZb1PMf.png" alt="Rocktopia">
+          </a>
+        </div>
+        <div class="label-item" data-label-name="Empire Music Group">
+          <a href="https://discord.com/channels/1279249850185154704/1279249850197872661">
+            <img src="https://i.imgur.com/TLfgmFZ.png" alt="Empire Music Group">
+          </a>
+        </div>
+        <div class="label-item" data-label-name="Muñoz Records">
+          <a href="https://discord.com/channels/1279249850185154704/1280240501588496444">
+            <img src="https://i.imgur.com/xzwN1Af.png" alt="Muñoz Records">
+          </a>
+        </div>
+        <div class="label-item" data-label-name="Sterling Records">
+          <a href="https://discord.com/channels/1279249850185154704/1281059716575002625">
+            <img src="https://i.imgur.com/YpzgZNf.png" alt="Sterling Records">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Rapstar Community: Forever - Beta</p>
+</footer>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+<script type="module" src="/js/home-content.js"></script>
+<script>
+  (() => {
+    const carousel = document.getElementById('adCarousel');
+    if (!carousel) return;
+
+    const advertisements = [...carousel.querySelectorAll('img')];
+    if (advertisements.length < 2) return;
+
+    let current = 0;
+    let timer;
+    const showAdvertisement = index => {
+      advertisements[current].classList.remove('active');
+      current = (index + advertisements.length) % advertisements.length;
+      advertisements[current].classList.add('active');
+    };
+    const startRotation = () => {
+      window.clearInterval(timer);
+      timer = window.setInterval(() => showAdvertisement(current + 1), 2000);
+    };
+
+    carousel.addEventListener('mouseenter', () => window.clearInterval(timer));
+    carousel.addEventListener('mouseleave', startRotation);
+    carousel.addEventListener('focusin', () => window.clearInterval(timer));
+    carousel.addEventListener('focusout', startRotation);
+    carousel.addEventListener('keydown', event => {
+      if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
+      event.preventDefault();
+      showAdvertisement(current + (event.key === 'ArrowRight' ? 1 : -1));
+    });
+
+    startRotation();
+  })();
+</script>
+  <script src="/js/star-rain.js" defer></script></body>
+</html>

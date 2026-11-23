@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <link rel="icon" type="image/png" href="https://i.imgur.com/X6uKwas.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <title>Spotify Monthly Listeners</title>
+  <style>
+    @font-face {
+      font-family: Spotify Chart;
+      src: url('../../fontes/marbletext-condensedsemibold.otf') format('opentype');
+    }
+
+    @font-face {
+      font-family: Spotify Chart Names;
+      src: url('../../fontes/Cerebri Sans SemiBold.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: Commons;
+      src: url('../../fontes/TT Commons Regular.otf') format('opentype');
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(160deg, #69358c 0%, #a67aba 38%, #f5f0f3 100%);
+      color: #333;
+      font-family: Commons, Arial, sans-serif;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      width: 100%;
+      padding: 18px 20px;
+      border-top: 5px solid;
+      border-image: linear-gradient(to right, #773797, whitesmoke) 1;
+      background: #333;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .35);
+    }
+
+    .menu-buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .menu-buttons > a,
+    .menu-buttons > button,
+    .dropbtn {
+      padding: 10px 18px;
+      border: 0;
+      border-radius: 20px;
+      background: #773797;
+      color: #fff;
+      font: 14px Commons, Arial, sans-serif;
+      letter-spacing: 1px;
+      text-decoration: none;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .menu-buttons > a:hover,
+    .menu-buttons > button:hover,
+    .dropbtn:hover {
+      background: #77eeaa;
+      color: #333;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      display: none;
+      min-width: 220px;
+      padding-top: 6px;
+    }
+
+    .dropdown:hover .dropdown-content,
+    .dropdown:focus-within .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      display: block;
+      margin-top: 5px;
+      padding: 9px 12px;
+      border-radius: 12px;
+      background: #773797;
+      color: #fff;
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background: #77eeaa;
+      color: #333;
+    }
+
+    .chart {
+      width: min(820px, calc(100% - 32px));
+      margin: 125px auto 60px;
+      overflow: hidden;
+      border-radius: 14px;
+      background: #f4efec;
+      box-shadow: 0 12px 35px rgba(43, 21, 54, .25);
+    }
+
+    .chart-kicker {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 22px;
+      background: #773797;
+      color: #fff;
+      font-family: Spotify Chart, sans-serif;
+      font-size: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .chart-kicker i {
+      font-size: 25px;
+    }
+
+    .chart-heading {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 22px 26px 20px;
+      border-bottom: 2px solid #e3d8de;
+      color: #69358c;
+    }
+
+    .heading-icon {
+      display: grid;
+      flex: 0 0 92px;
+      height: 92px;
+      place-items: center;
+      border-radius: 12px;
+      background: linear-gradient(145deg, #69358c, #9d68b1);
+      color: #fff;
+      font-size: 42px;
+    }
+
+    .chart-heading h1 {
+      margin: 0;
+      font-family: Spotify Chart, sans-serif;
+      font-size: clamp(38px, 7vw, 64px);
+      line-height: .95;
+      text-transform: uppercase;
+    }
+
+    .chart-heading p {
+      margin: 8px 0 0;
+      color: #786780;
+      font-family: Spotify Chart Names, sans-serif;
+      font-size: 14px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .listener-list {
+      margin: 0;
+      padding: 8px 22px 18px;
+      list-style: none;
+    }
+
+    .listener-row {
+      display: grid;
+      grid-template-columns: 48px 46px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 14px;
+      min-height: 68px;
+      border-bottom: 1px solid #e3d8de;
+    }
+
+    .listener-row:last-child {
+      border-bottom: 0;
+    }
+
+    .rank {
+      color: #806b84;
+      font-family: Spotify Chart, sans-serif;
+      font-size: 25px;
+      text-align: center;
+    }
+
+    .artist-icon {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      overflow: hidden;
+      place-items: center;
+      border-radius: 50%;
+      background: #e7dce9;
+      color: #69358c;
+      font-size: 17px;
+    }
+
+    .artist-icon img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .artist-name {
+      overflow-wrap: anywhere;
+      color: #69358c;
+      font-family: Spotify Chart Names, Arial, sans-serif;
+      font-size: 17px;
+    }
+
+    .listener-count {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: #54405c;
+      font-size: 15px;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .listener-count i {
+      color: #773797;
+    }
+
+    .listener-row.top-three {
+      margin: 0 -10px;
+      padding-right: 10px;
+      padding-left: 10px;
+      background: #eee5ef;
+    }
+
+    .listener-row.top-three .rank {
+      color: #69358c;
+    }
+
+    .listener-row:first-child .rank {
+      color: #bf8d26;
+    }
+
+    footer {
+      padding: 20px;
+      background: #333;
+      color: #fff;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 12px 8px;
+      }
+
+      .menu-buttons {
+        gap: 6px;
+      }
+
+      .menu-buttons > a,
+      .menu-buttons > button,
+      .dropbtn {
+        padding: 9px 10px;
+        font-size: 11px;
+      }
+
+      .chart {
+        margin-top: 105px;
+      }
+
+      .chart-heading {
+        gap: 14px;
+        padding: 18px;
+      }
+
+      .heading-icon {
+        flex-basis: 68px;
+        height: 68px;
+        font-size: 30px;
+      }
+
+      .listener-list {
+        padding: 6px 12px 14px;
+      }
+
+      .listener-row {
+        grid-template-columns: 32px 38px minmax(0, 1fr) auto;
+        gap: 8px;
+        min-height: 62px;
+      }
+
+      .rank {
+        font-size: 20px;
+      }
+
+      .artist-icon {
+        width: 36px;
+        height: 36px;
+      }
+
+      .artist-name {
+        font-size: 14px;
+      }
+
+      .listener-count {
+        gap: 5px;
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .listener-row {
+        grid-template-columns: 26px 32px minmax(0, 1fr) auto;
+        gap: 6px;
+      }
+
+      .artist-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+      }
+
+      .listener-count {
+        font-size: 11px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="menu-buttons" aria-label="Navegação principal">
+      <a href="/" aria-label="Página inicial"><i class="fas fa-home" aria-hidden="true"></i></a>
+      <div class="dropdown">
+        <button class="dropbtn" type="button">Charts <i class="fas fa-caret-down" aria-hidden="true"></i></button>
+        <div class="dropdown-content">
+          <a href="../billboard/hot100.html">Billboard Hot 100</a>
+          <a href="../billboard/billboard200.html">Billboard 200</a>
+          
+          <a href="spotify-singles.html">Spotify Global Singles</a>
+          
+          <a href="spotify-monthly-listeners.html" aria-current="page">Spotify  Monthly Listeners</a>
+        </div>
+      </div>
+      <a href="../../metacritic/metacritic.html">Metacritic</a>
+      <a href="https://discord.gg/PxNUBCHF4Q">Discord</a>
+      <a href="../../artistas/linhadotempo.html">Artistas</a>
+    </nav>
+  </header>
+
+  <main class="chart">
+    <div class="chart-kicker">
+      <span>Spotify Global Chart</span>
+      <i class="fab fa-spotify" aria-label="Spotify"></i>
+    </div>
+    <section class="chart-heading" aria-labelledby="chart-title">
+      <div class="heading-icon" aria-hidden="true"><i class="fas fa-headphones-alt"></i></div>
+      <div>
+        <h1 id="chart-title">Monthly Listeners</h1>
+        <p>Global Artists · Monthly Listeners</p>
+      </div>
+    </section>
+
+    <ol class="listener-list" aria-label="Artistas ordenados por ouvintes mensais">
+      <li class="listener-row top-three"><span class="rank">1</span><span class="artist-icon"><img src="../../img/artistas/aiddanking.png" alt="" loading="lazy"></span><span class="artist-name">Aiddan King</span><span class="listener-count"><i class="fas fa-headphones-alt" aria-hidden="true"></i>108,250,000</span></li>
+      <li class="listener-row top-three"><span class="rank">2</span><span class="artist-icon"><img src="https://i.imgur.com/62DBFYd.png" alt="" loading="lazy"></span><span class="artist-name">Maeve</span><span class="listener-count"><i class="fas fa-headphones-alt" aria-hidden="true"></i>100,005,000</span></li>
+      <li class="listener-row top-three"><span class="rank">3</span><span class="artist-icon"><img src="https://i.imgur.com/5wDO0GO.png" alt="" loading="lazy"></span><span class="artist-name">Daniel</span><span class="listener-count"><i class="fas fa-headphones-alt" aria-hidden="true"></i>94,350,000</span></li>
+      <li class="listener-row"><span class="rank">4</span><span class="artist-icon"><img src="../../img/artistas/nielly.jpg" alt="" loading="lazy"></span><span class="artist-name">Nielly</span><span class="listener-count"><i class="fas fa-headphones-alt" aria-hidden="true"></i>85,044,000</span></li>
+      <li class="listener-row"><span class="rank">5</span><span class="artist-icon"><img src="../../img/artistas/liberty.jpg" alt="" loading="lazy"></span><span class="artist-name">Liberty</span><span class="listener-count"><i class="fas fa-headphones-alt" aria-hidden="true"></i>84,025,000</span></li>
+      <li class="listener-row"><span class="rank">6</span><span class="artist-icon"><img src="../../img/artistas/logan.jpg" alt="" loading="lazy"></span><span class="artist-name">Logan</span><span class="listener-count"><i class="fas fa-headphones-alt" aria-hidden="true"></i>70,200,000</span></li>
+      <li class="listener-row"><span class="rank">7</span><span class="artist-icon"><img src="file:///C:/Users/linom/Downloads/Rapstar-Community-main/Rapstar-Community-main/img/artistas/carllie.png" alt="" loading="lazy"></span><span class="artist-name">Carllie</span><span class="listener-count"><i class="fas fa-headphones-alt" aria-hidden="true"></i>70,020,000</span></li>
+      <li class="listener-row"><span class="rank">8</span><span class="artist-icon"><img src="https://i.imgur.com/VUl9EtK.png" alt="" loading="lazy"></span><span class="artist-name">Emilia Ramirez</span><span class="listener-count"><i class="fas fa-headphones-alt" aria-hidden="true"></i>52,022,000</span></li>
+      <li class="listener-row"><span class="rank">9</span><span class="artist-icon"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV1DOqIqH2UOHOL035zbqcWRd3AcFMyrZ_hJrgV4_gwA&s" alt="" loading="lazy"></span><span class="artist-name">Jeffrey Bundy</span><span class="listener-count"><i class="fas fa-headphones-alt" aria-hidden="true"></i>51,230,000</span></li>
+      <li class="listener-row"><span class="rank">10</span><span class="artist-icon"><img src="https://i.imgur.com/rve7p69.png" alt="" loading="lazy"></span><span class="artist-name">Millie</span><span class="listener-count"><i class="fas fa-headphones-alt" aria-hidden="true"></i>50,800,000</span></li>
+      <li class="listener-row"><span class="rank">11</span><span class="artist-icon"><img src="https://i.imgur.com/B0QdMhv.png" alt="" loading="lazy"></span><span class="artist-name">Hazel Hansen</span><span class="listener-count"><i class="fas fa-headphones-alt" aria-hidden="true"></i>49,560,000</span></li>
+      <li class="listener-row"><span class="rank">12</span><span class="artist-icon"><img src="../../img/artistas/mark.jpg" alt="" loading="lazy"></span><span class="artist-name">Mark</span><span class="listener-count"><i class="fas fa-headphones-alt" aria-hidden="true"></i>44,005,000</span></li>
+      <li class="listener-row"><span class="rank">13</span><span class="artist-icon"><img src="../../img/artistas/lucille.jpg" alt="" loading="lazy"></span><span class="artist-name">Lucille</span><span class="listener-count"><i class="fas fa-headphones-alt" aria-hidden="true"></i>43,500,000</span></li>
+      <li class="listener-row"><span class="rank">14</span><span class="artist-icon"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6lQwEpnPWk2AqOdaEed0YagN5DkEZARNZSWs_JKub4Q&s=10" alt="" loading="lazy"></span><span class="artist-name">Boo Hang</span><span class="listener-count"><i class="fas fa-headphones-alt" aria-hidden="true"></i>32,000,000</span></li>
+      <li class="listener-row"><span class="rank">15</span><span class="artist-icon"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaaGtU-OAKyIRSwM2CFMKMgRppYIZo1Hkrz7hpVawbvVd1kIWlR9z5_22p&s=10" alt="" loading="lazy"></span><span class="artist-name">Maddy</span><span class="listener-count"><i class="fas fa-headphones-alt" aria-hidden="true"></i>31,150,000</span></li>
+      <li class="listener-row"><span class="rank">16</span><span class="artist-icon"><img src="https://i.pinimg.com/564x/db/86/ae/db86ae35693322134c124561963abf7e.jpg" alt="" loading="lazy"></span><span class="artist-name">Lilith</span><span class="listener-count"><i class="fas fa-headphones-alt" aria-hidden="true"></i>30,500,000</span></li>
+      <li class="listener-row"><span class="rank">17</span><span class="artist-icon"><img src="https://pbs.twimg.com/profile_images/2100774927611691008/yxSfRCZK_400x400.jpg" alt="" loading="lazy"></span><span class="artist-name">Chloe</span><span class="listener-count"><i class="fas fa-headphones-alt" aria-hidden="true"></i>28,950,000</span></li>
+      <li class="listener-row"><span class="rank">18</span><span class="artist-icon"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvKaIHu8eNr0-xXz5LkRL2wOYIqvRcvp-fMm6FWkUzLlYfBqIoEl8QQQE&s=10" alt="" loading="lazy"></span><span class="artist-name">Brandon</span><span class="listener-count"><i class="fas fa-headphones-alt" aria-hidden="true"></i>25,340,000</span></li>
+      <li class="listener-row"><span class="rank">19</span><span class="artist-icon"><img src="https://64.media.tumblr.com/fd730a19c9aa82df0442c52513e93a32/393564adfcf1dffb-a8/s1280x1920/785f70e4cfdd24d949613e6691d2f4749333e513.jpg" alt="" loading="lazy"></span><span class="artist-name">Raven</span><span class="listener-count"><i class="fas fa-headphones-alt" aria-hidden="true"></i>21,560,000</span></li>
+      <li class="listener-row"><span class="rank">20</span><span class="artist-icon"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuV-WbmS0GskMPRTzRJZ-cDuFSeFw2lDdfG9BzoebgZ88z3U2d23kpwQbS&s=10" alt="" loading="lazy"></span><span class="artist-name">Crystal</span><span class="listener-count"><i class="fas fa-headphones-alt" aria-hidden="true"></i>20,050,000</span></li>
+      <li class="listener-row"><span class="rank">21</span><span class="artist-icon"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqm-l6DuzP3mZFcoNRuSAz3E9XeQygTyp3i6-TCD7Ms-NSEcbIVbxdNcg&s=10" alt="" loading="lazy"></span><span class="artist-name">Maddox X</span><span class="listener-count"><i class="fas fa-headphones-alt" aria-hidden="true"></i>19,700,000</span></li>
+      <li class="listener-row"><span class="rank">22</span><span class="artist-icon"><img src="https://i.imgur.com/9BuuGyY.png" alt="" loading="lazy"></span><span class="artist-name">Sierra Albani</span><span class="listener-count"><i class="fas fa-headphones-alt" aria-hidden="true"></i>18,830,000</span></li>
+      <li class="listener-row"><span class="rank">23</span><span class="artist-icon"><img src="https://i.imgur.com/33eh4zl.png" alt="" loading="lazy"></span><span class="artist-name">Ashley Miller</span><span class="listener-count"><i class="fas fa-headphones-alt" aria-hidden="true"></i>15,230,000</span></li>
+      <li class="listener-row"><span class="rank">24</span><span class="artist-icon"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkKNNSodI41tTT56iwP3Geuz-aV8DemYzBPE_NSS10UfTkXBIa4PN8e_0&s=10" alt="" loading="lazy"></span><span class="artist-name">Luke</span><span class="listener-count"><i class="fas fa-headphones-alt" aria-hidden="true"></i>14,005,000</span></li>
+      <li class="listener-row"><span class="rank">25</span><span class="artist-icon"><img src="https://64.media.tumblr.com/bdc6754af061d1b662bc6c84554c15af/1eb0ac4ace87a2cb-e6/s400x600/7dfad69df42fe94d6ce1bf7ad6ccec79960e706f.pnj" alt="" loading="lazy"></span><span class="artist-name">Mason</span><span class="listener-count"><i class="fas fa-headphones-alt" aria-hidden="true"></i>10,010,000</span></li>
+    </ol>
+  </main>
+
+  <footer>© 2026 Rapstar Community: Forever - Beta</footer>
+  <script src="/js/star-rain.js" defer></script></body>
+</html>

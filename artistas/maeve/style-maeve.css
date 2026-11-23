@@ -1,0 +1,13 @@
+﻿:root {
+  --color1at: #8bbc93;
+  --color2at: #c89ebe;
+  --color3at: #8bbc93;
+  --color4at: #8bbc93;
+  --image-url-header: url("https://images.squarespace-cdn.com/content/v1/542abd5ee4b07bcb1e64f49e/1737160297816-XIZFKYFVTB7YWU9DE9FG/Screen+Shot+2025-01-17+at+4.30.01+PM.png?format=2500w");
+  --image-url-artist: url("https://i.imgur.com/62DBFYd.png");
+}
+
+.artist-header{
+  background-position: 60% 10%;
+}
+

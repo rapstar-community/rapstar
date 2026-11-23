@@ -1,0 +1,12 @@
+﻿:root {
+  --color1at: #551f79;
+  --color2at: #353535;
+  --color3at: #481981;
+  --color4at: #8438b0;
+  --image-url-header: url("https://images.complex.com/complex/image/upload/c_fill,w_1200,h_630,g_auto,q_auto,f_auto/v1755818759/CS_BrandArtist_Desktop_Demi_21x7_ltymha.png");
+  --image-url-artist: url("../../img/artistas/lucille.jpg");
+}
+.artist-header {
+  background-position: top left;
+}
+

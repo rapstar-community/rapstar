@@ -1,0 +1,12 @@
+﻿:root {
+  --color1at: #3c2d27;
+  --color2at: #1a2e20;
+  --color3at: #274233;
+  --color4at: #302921;
+  --image-url-header: url("file:///C:/Users/linom/Downloads/Rapstar-Community-main/Rapstar-Community-main/img/artistas/Carllie%20Fundo.png");
+  --image-url-artist: url("file:///C:/Users/linom/Downloads/Rapstar-Community-main/Rapstar-Community-main/img/artistas/carllie.png");
+}
+.artist-header {
+  background-position: top left;
+}
+

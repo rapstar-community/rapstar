@@ -1,0 +1,12 @@
+﻿:root {
+  --color1at: #1F4E79;
+  --color2at: #2eb635;
+  --color3at: #5B9BD5;
+  --color4at: #9DC3E6;
+  --image-url-header: url("https://i.imgur.com/WfgES2H.jpeg");
+  --image-url-artist: url("../../img/artistas/mark.jpg");
+}
+.artist-header {
+  background-position: top left;
+}
+
