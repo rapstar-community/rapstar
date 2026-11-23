@@ -209,16 +209,25 @@
     {
     title: "Now You See Me",
     year: "Season 18",
-    image: "https://i.imgur.com/n5OTHPi.png",
+    image: "https://i.imgur.com/T72klpK.png",
     label: "℗ © Empire Music Group",
     artist: "Maeve",
     single: "sim",
     featuring: []
   },
-    {
+  {
+    title: "Fash!on",
+    year: "Season 17",
+    image: "https://i.imgur.com/fzIGbAJ.png",
+    label: "℗ © Empire Music Group",
+    artist: "Maeve",
+    single: "sim",
+    featuring: []
+  },
+  {
     title: "Solitude Dynamics",
     year: "Season 16",
-    image: "https://i.imgur.com/n5OTHPi.png",
+    image: "https://i.imgur.com/nKlgYx5.jpeg",
     label: "℗ © Empire Music Group",
     artist: "Maeve",
     single: "sim",
@@ -227,7 +236,7 @@
     {
     title: "Euphoria",
     year: "Season 16",
-    image: "https://i.imgur.com/n5OTHPi.png",
+    image: "https://i.imgur.com/Btb5WWG.jpeg",
     label: "℗ © Empire Music Group",
     artist: "Maeve",
     single: "sim",
@@ -236,7 +245,7 @@
     {
     title: "Heat of the Night",
     year: "Season 15",
-    image: "https://i.imgur.com/n5OTHPi.png",
+    image: "https://i.imgur.com/eMQCwH7.jpeg",
     label: "℗ © Empire Music Group",
     artist: "Maeve",
     single: "sim",
@@ -245,7 +254,7 @@
     {
     title: "Worst Enemy",
     year: "Season 14",
-    image: "https://i.imgur.com/n5OTHPi.png",
+    image: "https://i.imgur.com/kkCHd62.jpeg",
     label: "℗ © Empire Music Group",
     artist: "Maeve",
     single: "sim",
