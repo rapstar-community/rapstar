@@ -191,7 +191,7 @@
   {
     title: "Maeve Meets World",
     year: "Season 19",
-    image: "https://i.imgur.com/n5OTHPi.png",
+    image: "https://i.imgur.com/sqwty67.png",
     label: "℗ © Rocktopia",
     artist: "Maeve",
     single: "sim",
@@ -200,7 +200,7 @@
     {
     title: "I'm Not That Girl",
     year: "Season 19",
-    image: "https://i.imgur.com/n5OTHPi.png",
+    image: "https://i.imgur.com/z5RBqis.png",
     label: "℗ © Rocktopia",
     artist: "Maeve",
     single: "sim",
