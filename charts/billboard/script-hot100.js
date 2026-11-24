@@ -7,8 +7,8 @@ var tabelaDados = [
   { posicao: 6, musica: "Carllie", artista: "Liberty", imagem: "" },
   { posicao: 7, musica: "Intelectual Cunt", artista: "Nielly", imagem: "" },
   { posicao: 8, musica: "Still Got It", artista: "Lucille", imagem: "" },
-  { posicao: 9, musica: "I'm Not That Girl", artista: "Maeve", imagem: "" },
-  { posicao: 10, musica: "Postcards", artista: "Hazel Hansen", imagem: "" },
+  { posicao: 9, musica: "Voz do Brasil", artista: "Maeve", imagem: "" },
+  { posicao: 10, musica: "I'm Not That Girl", artista: "Hazel Hansen", imagem: "" },
 ];
 
 function atualizarTabela() {

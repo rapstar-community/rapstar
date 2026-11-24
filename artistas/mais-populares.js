@@ -2,19 +2,19 @@
   const popularSongsByArtist = {
     "Liberty": {
       songs: [
-        { rank: 1, title: "Girl Crush", streams: "70,000,000", cover: "https://i.imgur.com/CPDz2Yg.jpeg" },
-        { rank: 2, title: "Carllie", streams: "270,000,000", cover: "https://i.imgur.com/UVmXkGQ.jpeg" },
-        { rank: 2, title: "Lemons", streams: "3,350,000,000", cover: "https://i.imgur.com/4cYwJav.png" },
-        { rank: 3, title: "Drop Culture", streams: "2,240,000,000", cover: "https://i.imgur.com/4cYwJav.png" },
-        { rank: 4, title: "Funny Games", streams: "2,500,000,000", cover: "https://i.imgur.com/k64xLkn.png" }
+        { rank: 1, title: "Girl Crush", streams: "116,000,000", cover: "https://i.imgur.com/CPDz2Yg.jpeg" },
+        { rank: 2, title: "Carllie", streams: "302,000,000", cover: "https://i.imgur.com/UVmXkGQ.jpeg" },
+        { rank: 2, title: "Lemons", streams: "3,450,000,000", cover: "https://i.imgur.com/4cYwJav.png" },
+        { rank: 3, title: "Drop Culture", streams: "2,450,000,000", cover: "https://i.imgur.com/4cYwJav.png" },
+        { rank: 4, title: "Funny Games", streams: "2,650,000,000", cover: "https://i.imgur.com/k64xLkn.png" }
       ]
     },
     "Aiddan King": {
       songs: [
-        { rank: 1, title: "that's my baby", streams: "210,000,000", cover: "https://i.imgur.com/eWFMuX0.jpeg" },
-        { rank: 2, title: "Eletrogasm", streams: "245,000,000", cover: "https://i.imgur.com/nTdddCx.jpeg" },
-        { rank: 3, title: "Coda", streams: "1,910,000,000", cover: "https://i.imgur.com/3cp8vz7.jpeg" },
-        { rank: 4, title: "Romance", streams: "4,300,000,000", cover: "https://i.imgur.com/Pn8G3ys.jpeg" },
+        { rank: 1, title: "that's my baby", streams: "195,000,000", cover: "https://i.imgur.com/eWFMuX0.jpeg" },
+        { rank: 2, title: "Eletrogasm", streams: "235,000,000", cover: "https://i.imgur.com/nTdddCx.jpeg" },
+        { rank: 3, title: "Coda", streams: "1,970,000,000", cover: "https://i.imgur.com/3cp8vz7.jpeg" },
+        { rank: 4, title: "Romance", streams: "4,310,000,000", cover: "https://i.imgur.com/Pn8G3ys.jpeg" },
         { rank: 5, title: "Limbo", streams: "880,000,000", cover: "https://i.imgur.com/zFaZf2L.jpeg" }
       ]
     },
@@ -29,56 +29,56 @@
     },
     "Logan": {
       songs: [
-        { rank: 1, title: "broken hearts can't be mended", streams: "1,389,000,000", cover: "https://i.imgur.com/WsAnx2G.jpeg" },
-        { rank: 2, title: "Nightmares", streams: "4,993,000,000", cover: "https://i.imgur.com/qRToFd5.png" },
-        { rank: 3, title: "Don't Make That Face", streams: "3,976,000,000", cover: "https://i.imgur.com/eurMWiI.png" },
-        { rank: 4, title: "paper planes", streams: "2,620,000,000", cover: "https://i.imgur.com/wUpDTsM.jpeg" },
+        { rank: 1, title: "broken hearts can't be mended", streams: "1,359,000,000", cover: "https://i.imgur.com/WsAnx2G.jpeg" },
+        { rank: 2, title: "Nightmares", streams: "4,990,000,000", cover: "https://i.imgur.com/qRToFd5.png" },
+        { rank: 3, title: "Don't Make That Face", streams: "3,820,000,000", cover: "https://i.imgur.com/eurMWiI.png" },
+        { rank: 4, title: "paper planes", streams: "2,680,000,000", cover: "https://i.imgur.com/wUpDTsM.jpeg" },
         { rank: 5, title: "I Noticed You Tried", streams: "2,869,000,000", cover: "https://i.imgur.com/fuFd8rA.jpeg" }
       ]
     },
     "Carllie": {
       songs: [
-        { rank: 1, title: "Love Again", streams: "3,975,000,000", cover: "https://i.imgur.com/Vfd3eq6.jpeg" },
+        { rank: 1, title: "Love Again", streams: "3,990,000,000", cover: "https://i.imgur.com/Vfd3eq6.jpeg" },
         { rank: 2, title: "Where She Goes?", streams: "3,523,000,000", cover: "https://i.imgur.com/Vfd3eq6.jpeg" },
-        { rank: 3, title: "Runaway", streams: "1,705,000,000", cover: "https://i.imgur.com/Xg0HwaM.jpeg" },
+        { rank: 3, title: "Runaway", streams: "1,720,000,000", cover: "https://i.imgur.com/Xg0HwaM.jpeg" },
         { rank: 4, title: "Hold On Tight", streams: "1,750,000,000", cover: "https://i.imgur.com/J2Z83Mw.jpeg" },
         { rank: 5, title: "King of My Heart", streams: "3,035,000,000", cover: "https://i.imgur.com/Vk3s81u.jpeg" }
       ]
     } ,
     "Maeve": {
       songs: [
-        { rank: 1, title: "Maeve Meets World", streams: "176,000,000", cover: "https://i.imgur.com/wLitDgJ.jpeg" },
-        { rank: 2, title: "I'm Not That Girl", streams: "265,000,000", cover: "https://i.imgur.com/wLitDgJ.jpeg" },
-        { rank: 3, title: "Hannah Montana", streams: "115,000,000", cover: "https://i.imgur.com/wLitDgJ.jpeg" },
-        { rank: 4, title: "I Will Always Love You", streams: "104,000,000", cover: "https://i.imgur.com/wLitDgJ.jpeg" },
-        { rank: 5, title: "Chain Reaction", streams: "85,000,000", cover: "https://i.imgur.com/wLitDgJ.jpeg" }
+        { rank: 1, title: "Maeve Meets World", streams: "197,000,000", cover: "https://i.imgur.com/wLitDgJ.jpeg" },
+        { rank: 2, title: "I'm Not That Girl", streams: "305,000,000", cover: "https://i.imgur.com/wLitDgJ.jpeg" },
+        { rank: 3, title: "Hannah Montana", streams: "135,000,000", cover: "https://i.imgur.com/wLitDgJ.jpeg" },
+        { rank: 4, title: "I Will Always Love You", streams: "114,000,000", cover: "https://i.imgur.com/wLitDgJ.jpeg" },
+        { rank: 5, title: "Chain Reaction", streams: "105,000,000", cover: "https://i.imgur.com/wLitDgJ.jpeg" }
       ]
     }  ,
     "Daniel": {
       songs: [
-        { rank: 1, title: "Who's That DJ?", streams: "320,000,000", cover: "/artistas/daniel/covers/01-whos-that-dj.jpeg" },
-        { rank: 2, title: "Boogie", streams: "4,992,000,000", cover: "/artistas/daniel/covers/02-old-vintage-ways.jpeg" },
-        { rank: 3, title: "Hero", streams: "3,815,000,000", cover: "/artistas/daniel/covers/04-rocket-science.jpeg" },
+        { rank: 1, title: "Who's That DJ?", streams: "346,000,000", cover: "/artistas/daniel/covers/01-whos-that-dj.jpeg" },
+        { rank: 2, title: "Boogie", streams: "4,995,000,000", cover: "/artistas/daniel/covers/02-old-vintage-ways.jpeg" },
+        { rank: 3, title: "Hero", streams: "3,850,000,000", cover: "/artistas/daniel/covers/04-rocket-science.jpeg" },
         { rank: 4, title: "Old-Schooled Boy 2", streams: "1,050,000,000", cover: "/artistas/daniel/covers/02-old-vintage-ways.jpeg" },
-        { rank: 5, title: "Call Me Later", streams: "2,725,000,000", cover: "/artistas/daniel/covers/02-old-vintage-ways.jpeg" }
+        { rank: 5, title: "Call Me Later", streams: "2,730,000,000", cover: "/artistas/daniel/covers/02-old-vintage-ways.jpeg" }
       ]
     }  ,
     "Mark": {
       songs: [
         { rank: 1, title: "Nightshift", streams: "26,100,000", cover: "https://i.imgur.com/WfgES2H.jpeg" },
         { rank: 2, title: "Old-Schooled Boy 2", streams: "1,050,000,000", cover: "https://i.imgur.com/3CfeBjG.jpeg" },
-        { rank: 3, title: "Purple Forest", streams: "2,915,000,000", cover: "https://i.imgur.com/54rxkjr.jpeg" },
-        { rank: 4, title: "Dirtman", streams: "3,910,000,000", cover: "https://i.imgur.com/U5rtMLM.jpeg" },
+        { rank: 3, title: "Purple Forest", streams: "2,950,000,000", cover: "https://i.imgur.com/54rxkjr.jpeg" },
+        { rank: 4, title: "Dirtman", streams: "3,902,000,000", cover: "https://i.imgur.com/U5rtMLM.jpeg" },
         { rank: 5, title: "Christmas Games", streams: "94,000,000", cover: "https://i.imgur.com/QKWSFvG.jpeg" }
       ]
     }  ,
     "Lucille": {
       songs: [
-        { rank: 1, title: "Still Got It", streams: "125,000,000", cover: "https://i.imgur.com/31QjRmg.jpeg" },
+        { rank: 1, title: "Still Got It", streams: "155,000,000", cover: "https://i.imgur.com/31QjRmg.jpeg" },
         { rank: 2, title: "Please, Handle Me", streams: "265,000,000", cover: "https://i.imgur.com/5bXbHpl.jpeg" },
         { rank: 3, title: "The Way It Is", streams: "115,000,000", cover: "https://i.imgur.com/pJenf3s.png" },
         { rank: 4, title: "Stay (Remix)", streams: "104,000,000", cover: "https://i.imgur.com/SHUZa6m.png" },
-        { rank: 5, title: "Brand New Me", streams: "5,000,000", cover: "https://i.imgur.com/31QjRmg.jpeg" }
+        { rank: 5, title: "Brand New Me", streams: "13,645,000", cover: "https://i.imgur.com/31QjRmg.jpeg" }
       ]
     }  ,
     "Hazel Hansen": {
@@ -87,16 +87,16 @@
         { rank: 2, title: "Illusion (feat. Millie)", streams: "125,000,000", cover: "https://i.imgur.com/QBTb79L.png" },
         { rank: 3, title: "IRL", streams: "115,000,000", cover: "https://i.imgur.com/QBTb79L.png" },
         { rank: 4, title: "Housekeeping", streams: "104,000,000", cover: "https://i.imgur.com/QBTb79L.png" },
-        { rank: 5, title: "Gimme Gimme (with Dallas)", streams: "4,260,000", cover: "https://i.imgur.com/qlvjhk2.png" }
+        { rank: 5, title: "Gimme Gimme (with Dallas)", streams: "2,660,000", cover: "https://i.imgur.com/qlvjhk2.png" }
       ]
     }  ,
     "Millie": {
       songs: [
-        { rank: 1, title: "Beautiful Theory", streams: "41,000,000", cover: "https://i.imgur.com/jENAZax.png" },
+        { rank: 1, title: "Beautiful Theory", streams: "65,000,000", cover: "https://i.imgur.com/jENAZax.png" },
         { rank: 2, title: "Candy", streams: "155,000,000", cover: "https://i.imgur.com/clzhZHj.png" },
         { rank: 3, title: "Illusion", streams: "125,000,000", cover: "https://i.imgur.com/QBTb79L.png" },
-        { rank: 4, title: "Baby, Please", streams: "2,104,000,000", cover: "https://i.imgur.com/zSyOAMG.png" },
-        { rank: 5, title: "Position", streams: "1,802,000,000", cover: "https://i.imgur.com/zSyOAMG.png" }
+        { rank: 4, title: "Baby, Please", streams: "3,101,000,000", cover: "https://i.imgur.com/zSyOAMG.png" },
+        { rank: 5, title: "Position", streams: "1,810,000,000", cover: "https://i.imgur.com/zSyOAMG.png" }
       ]
     }  ,
     "Emília Ramirez": {
@@ -104,32 +104,32 @@
         { rank: 1, title: "DEVOTO", streams: "107,000,000", cover: "https://i.imgur.com/MIhfVRk.jpeg" },
         { rank: 2, title: "KLK", streams: "265,000,000", cover: "https://i.imgur.com/1jt1SfO.jpeg" },
         { rank: 3, title: "Dragaminas", streams: "992,000,000", cover: "https://i.imgur.com/1jt1SfO.jpeg" },
-        { rank: 4, title: "Ojalá", streams: "1,505,000,000", cover: "https://i.imgur.com/PJ4Crru.png" },
-        { rank: 5, title: "Hasta La Muerte", streams: "1,705,000,000", cover: "https://i.imgur.com/yRI5MDh.png" }
+        { rank: 4, title: "Ojalá", streams: "1,605,000,000", cover: "https://i.imgur.com/PJ4Crru.png" },
+        { rank: 5, title: "Hasta La Muerte", streams: "1,760,000,000", cover: "https://i.imgur.com/yRI5MDh.png" }
       ]
     }  ,
     "Nielly": {
       songs: [
-        { rank: 1, title: "Voz do Brasil", streams: "115,000,000", cover: "https://i.imgur.com/tvOI6s2.jpeg" },
-        { rank: 2, title: "Intelectual Cunt", streams: "265,000,000", cover: "https://i.imgur.com/tvOI6s2.jpeg" },
-        { rank: 3, title: "Quiet Down", streams: "115,000,000", cover: "https://i.imgur.com/tvOI6s2.jpeg" },
-        { rank: 4, title: "Contrariando Estatística", streams: "104,000,000", cover: "https://i.imgur.com/tvOI6s2.jpeg" },
-        { rank: 5, title: "Teresa", streams: "85,000,000", cover: "https://i.imgur.com/tvOI6s2.jpeg" }
+        { rank: 1, title: "Voz do Brasil", streams: "285,000,000", cover: "https://i.imgur.com/tvOI6s2.jpeg" },
+        { rank: 2, title: "Intelectual Cunt", streams: "165,000,000", cover: "https://i.imgur.com/tvOI6s2.jpeg" },
+        { rank: 3, title: "Quiet Down", streams: "1,730,000,000", cover: "https://i.imgur.com/tvOI6s2.jpeg" },
+        { rank: 4, title: "Contrariando Estatística", streams: "70,000,000", cover: "https://i.imgur.com/tvOI6s2.jpeg" },
+        { rank: 5, title: "Teresa", streams: "62,000,000", cover: "https://i.imgur.com/tvOI6s2.jpeg" }
       ]
     }  ,
     "Luke": {
       songs: [
         { rank: 1, title: "Cool Girl", streams: "205,000,000", cover: "https://i.imgur.com/JeW9t8m.png" },
-        { rank: 2, title: "Intelectual Cunt", streams: "265,000,000", cover: "https://i.imgur.com/JeW9t8m.png" },
-        { rank: 3, title: "Quiet Down", streams: "115,000,000", cover: "https://i.imgur.com/JeW9t8m.png" },
-        { rank: 4, title: "Contrariando Estatística", streams: "104,000,000", cover: "https://i.imgur.com/JeW9t8m.png" },
-        { rank: 5, title: "Teresa", streams: "85,000,000", cover: "https://i.imgur.com/JeW9t8m.png" }
+        { rank: 2, title: "Mixing Words", streams: "145,000,000", cover: "https://i.imgur.com/JeW9t8m.png" },
+        { rank: 3, title: "Fireworks", streams: "60,000,000", cover: "https://i.imgur.com/JeW9t8m.png" },
+        { rank: 4, title: "Fireworks (Remix)", streams: "65,000,000", cover: "https://i.imgur.com/JeW9t8m.png" },
+        { rank: 5, title: "Be Right Back", streams: "29,000,000", cover: "https://i.imgur.com/JeW9t8m.png" }
       ]
     }  ,
     "Sierra Albani": {
       songs: [
         { rank: 1, title: "Angel's Cinema", streams: "45,000,000", cover: "https://i.imgur.com/52QjiyW.png" },
-        { rank: 2, title: "California", streams: "125,000,000", cover: "https://i.imgur.com/CzR0uR9.png" },
+        { rank: 2, title: "California", streams: "115,000,000", cover: "https://i.imgur.com/CzR0uR9.png" },
       ]
     }  , 
     "Angel": {
